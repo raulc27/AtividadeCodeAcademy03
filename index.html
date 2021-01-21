@@ -14,9 +14,19 @@
 
 <body>
 
+    <div id="root"></div>
+
+
+
+
+
+
     <div class="container mt-5">
 
 
+<script>
+ const app = document.querySelector('#root')
+ app.innerHTML=`
         <form class="col-4 offset-3">
 
             <div class="form-group mt-3">
@@ -26,7 +36,7 @@
 
             <div class="form-group mt-3">
                 <label for="exampleInputEmail1">Idade:</label>
-                <input type="number" class="form-control" id="idade" aria-describedby="idade" placeholder="Sua idade">
+                <input type="number" class="form-control" id="idade" aria-describedby="idade" placeholder="Digite a sua idade">
               </div>
 
             
@@ -52,10 +62,43 @@
                 <input type="text" class="form-control" id="municipio" aria-describedby="municipio" placeholder="Digite o seu Município">
               </div>
             
-            <button type="submit" class="btn btn-outline-primary mt-5">Submit</button>
+            <button type="submit" onClick="SecondScreen()" class="btn btn-outline-primary mt-5">Submit</button>
           </form>
+          `
+          
+          
+          function SecondScreen(){
+            let nome = document.getElementById('nome').value;
+            let idade = document.getElementById('idade').value;
+            let profissao = document.getElementById('profissao').value;
+            let endereco = document.getElementById('endereco').value;
+            let UF = document.getElementById('UF').value;
+            let municipio = document.getElementById('municipio').value;
+
+            app.innerHTML = ` 
+                            <h1>Seus dados são</h1>
+                                <div class="card col-4 offset-3">
+                                    <div class="card-body">
+                                        <div class="card mt-5 bg-secondary">
+                                            <div class="card-body">
+                                             <ul class="list-group list-group-flush">
+                                                <li class="list-group-item"><b>Nome:</b> ${nome}</li>
+                                                <li class="list-group-item"><b>Idade:</b> ${idade}</li>
+                                                <li class="list-group-item"><b>Profissão:</b> ${profissao}</li>
+                                                <li class="list-group-item"> <b>Endereço:</b> ${endereco}</li>
+                                                <li class="list-group-item"><b>Estado:</b> ${UF}</li>
+                                                <li class="list-group-item"><b>Município:</b> ${municipio}</li>
+
+                                            </ul>
 
 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`;
+        }
+
+</script>
 
     </div>
     
