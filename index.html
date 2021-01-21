@@ -75,7 +75,7 @@
             let UF = document.getElementById('UF').value;
             let municipio = document.getElementById('municipio').value;
 
-            app.innerHTML = ` 
+            const LoadContent = ` 
                             <h1 >Seus dados são:</h1>
                                 <div class="card col-4 offset-3">
                                     <div class="card-body">
@@ -96,7 +96,26 @@
                                         </div>
                                     </div>
                                 </div>`;
+
+                                let Content = ` <div class="container">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h1> Seu nome é ${nome} e você tem ${idade} anos.</h1>
+                                        <h2>Seja bem vindo</h2>
+                                    </div>
+                                </div>         
+                            </div>`;
+
+
+                                app.innerHTML = LoadContent
+
+                                setTimeout(() => {
+                                    app.innerHTML = Content
+                                }, 3000);
         }
+
+
+
 
 </script>
 
